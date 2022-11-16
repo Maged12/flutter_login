@@ -184,6 +184,8 @@ class _AdditionalSignUpCardState extends State<_AdditionalSignUpCard>
               : AnimatedTextFormField(
                   dropDown: formField.dropDownWidget!,
                   width: width,
+                  controller: _nameControllers[formField.keyName],
+                  loadingController: widget.loadingController,
                 ),
           const SizedBox(
             height: 5,
