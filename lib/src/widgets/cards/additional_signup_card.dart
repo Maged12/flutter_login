@@ -181,7 +181,10 @@ class _AdditionalSignUpCardState extends State<_AdditionalSignUpCard>
                           : TextInputAction.next,
                   validator: formField.fieldValidator,
                 )
-              : formField.dropDownWidget!,
+              : AnimatedTextFormField(
+                  dropDown: formField.dropDownWidget!,
+                  width: width,
+                ),
           const SizedBox(
             height: 5,
           )

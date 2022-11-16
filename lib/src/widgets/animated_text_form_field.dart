@@ -45,6 +45,7 @@ class AnimatedTextFormField extends StatefulWidget {
     this.onSaved,
     this.autocorrect = false,
     this.autofillHints,
+    this.dropDown,
   })  : assert((inertiaController == null && inertiaDirection == null) ||
             (inertiaController != null && inertiaDirection != null)),
         super(key: key);
@@ -53,6 +54,7 @@ class AnimatedTextFormField extends StatefulWidget {
   final AnimationController? loadingController;
   final AnimationController? inertiaController;
   final double width;
+  final Widget? dropDown;
   final bool enabled;
   final bool autocorrect;
   final Iterable<String>? autofillHints;
@@ -207,21 +209,22 @@ class _AnimatedTextFormFieldState extends State<AnimatedTextFormField> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    Widget textField = TextFormField(
-      cursorColor: theme.primaryColor,
-      controller: widget.controller,
-      focusNode: widget.focusNode,
-      decoration: _getInputDecoration(theme),
-      keyboardType: widget.keyboardType,
-      textInputAction: widget.textInputAction,
-      obscureText: widget.obscureText,
-      onFieldSubmitted: widget.onFieldSubmitted,
-      onSaved: widget.onSaved,
-      validator: widget.validator,
-      enabled: widget.enabled,
-      autocorrect: widget.autocorrect,
-      autofillHints: widget.autofillHints,
-    );
+    Widget textField = widget.dropDown ??
+        TextFormField(
+          cursorColor: theme.primaryColor,
+          controller: widget.controller,
+          focusNode: widget.focusNode,
+          decoration: _getInputDecoration(theme),
+          keyboardType: widget.keyboardType,
+          textInputAction: widget.textInputAction,
+          obscureText: widget.obscureText,
+          onFieldSubmitted: widget.onFieldSubmitted,
+          onSaved: widget.onSaved,
+          validator: widget.validator,
+          enabled: widget.enabled,
+          autocorrect: widget.autocorrect,
+          autofillHints: widget.autofillHints,
+        );
 
     if (widget.loadingController != null) {
       textField = ScaleTransition(
