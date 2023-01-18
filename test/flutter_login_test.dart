@@ -175,6 +175,7 @@ void main() {
           onLogin: (data) => null,
           onRecoverPassword: (data) => null,
           userValidator: (value) => value!.endsWith('.com') ? null : 'Invalid!',
+          backButton: const SizedBox.shrink(),
         ));
     await tester.pumpWidget(loginBuilder());
     await tester.pumpAndSettle(loadingAnimationDuration);
@@ -205,6 +206,7 @@ void main() {
           onLogin: (data) => null,
           onRecoverPassword: (data) => null,
           passwordValidator: (value) => value!.length == 5 ? null : 'Invalid!',
+      backButton: const SizedBox.shrink(),
         ));
     await tester.pumpWidget(loginBuilder());
     await tester.pumpAndSettle(loadingAnimationDuration);
@@ -282,6 +284,7 @@ void main() {
           onSignup: (data) => null,
           onLogin: (data) => null,
           onRecoverPassword: (data) => null,
+      backButton: const SizedBox.shrink(),
           messages: LoginMessages(
             userHint: 'User',
             passwordHint: 'Pass',
@@ -388,6 +391,7 @@ void main() {
       onLogin: (data) => null,
       onRecoverPassword: (data) => null,
       showDebugButtons: true,
+      backButton: const SizedBox.shrink(),
     ));
     await tester.pumpWidget(flutterLogin);
     await tester.pumpAndSettle(loadingAnimationDuration);
@@ -399,6 +403,7 @@ void main() {
       onLogin: (data) => null,
       onRecoverPassword: (data) => null,
       showDebugButtons: false,
+      backButton: const SizedBox.shrink(),
     ));
     await tester.pumpWidget(flutterLogin);
     await tester.pumpAndSettle(loadingAnimationDuration);
@@ -415,6 +420,7 @@ void main() {
       onSignup: (data) => null,
       onLogin: (data) => null,
       onRecoverPassword: (data) => null,
+      backButton: const SizedBox.shrink(),
     ));
     await tester.pumpWidget(flutterLogin);
     await tester.pumpAndSettle(loadingAnimationDuration);
@@ -426,6 +432,7 @@ void main() {
       onLogin: (data) => null,
       onRecoverPassword: (data) => null,
       logo: const AssetImage('assets/images/ecorp.png'),
+      backButton: const SizedBox.shrink(),
     ));
     await tester.pumpWidget(flutterLogin);
     await tester.pumpAndSettle(loadingAnimationDuration);
@@ -443,6 +450,7 @@ void main() {
       onLogin: (data) => null,
       onRecoverPassword: (data) => null,
       title: '',
+      backButton: const SizedBox.shrink(),
     ));
     await tester.pumpWidget(flutterLogin);
     await tester.pumpAndSettle(loadingAnimationDuration);
@@ -454,6 +462,7 @@ void main() {
       onLogin: (data) => null,
       onRecoverPassword: (data) => null,
       title: null,
+      backButton: const SizedBox.shrink(),
     ));
     await tester.pumpWidget(flutterLogin);
     await tester.pumpAndSettle(loadingAnimationDuration);
@@ -465,6 +474,7 @@ void main() {
       onLogin: (data) => null,
       onRecoverPassword: (data) => null,
       title: 'My Login',
+      backButton: const SizedBox.shrink(),
     ));
     await tester.pumpWidget(flutterLogin);
     await tester.pumpAndSettle(loadingAnimationDuration);
@@ -482,6 +492,7 @@ void main() {
           userValidator: mockCallback.userValidator,
           passwordValidator: mockCallback.passwordValidator,
           onSubmitAnimationCompleted: mockCallback.onSubmitAnimationCompleted,
+      backButton: const SizedBox.shrink(),
         ));
     await tester.pumpWidget(loginBuilder());
     await tester.pumpAndSettle(loadingAnimationDuration);
@@ -555,6 +566,7 @@ void main() {
           userValidator: mockCallback.userValidator,
           passwordValidator: mockCallback.passwordValidator,
           onSubmitAnimationCompleted: mockCallback.onSubmitAnimationCompleted,
+      backButton: const SizedBox.shrink(),
         ));
     await tester.pumpWidget(loginBuilder());
     await tester.pumpAndSettle(loadingAnimationDuration);
@@ -657,6 +669,7 @@ void main() {
           userValidator: mockCallback.userValidator,
           passwordValidator: mockCallback.passwordValidator,
           onSubmitAnimationCompleted: mockCallback.onSubmitAnimationCompleted,
+      backButton: const SizedBox.shrink(),
           additionalSignupFields: <UserFormField>[
             UserFormField(
               keyName: 'Name',
@@ -803,6 +816,7 @@ void main() {
       onLogin: (data) => null,
       onRecoverPassword: (data) => null,
       logo: const AssetImage('assets/images/ecorp.png'),
+      backButton: const SizedBox.shrink(),
       title: 'Yang2020',
     ));
 
@@ -853,6 +867,7 @@ void main() {
           onLogin: (data) => null,
           onRecoverPassword: (data) => null,
           passwordValidator: (value) => value!.length == 5 ? null : 'Invalid!',
+      backButton: const SizedBox.shrink(),
           hideForgotPasswordButton: true,
           messages: LoginMessages(
             signupButton: 'REGISTER',
@@ -872,6 +887,7 @@ void main() {
           onLogin: (data) => null,
           onRecoverPassword: (data) => null,
           passwordValidator: (value) => value!.length == 5 ? null : 'Invalid!',
+      backButton: const SizedBox.shrink(),
           loginProviders: [
             LoginProvider(
                 icon: Icons.ac_unit,
@@ -896,6 +912,7 @@ void main() {
           onLogin: (data) => null,
           onRecoverPassword: (data) => null,
           passwordValidator: (value) => value!.length == 5 ? null : 'Invalid!',
+      backButton: const SizedBox.shrink(),
           messages: LoginMessages(
             signupButton: 'REGISTER',
             forgotPasswordButton: 'Forgot huh?',
@@ -913,6 +930,7 @@ void main() {
           onRecoverPassword: (data) => null,
           passwordValidator: (value) => value!.length == 5 ? null : 'Invalid!',
           hideProvidersTitle: true,
+      backButton: const SizedBox.shrink(),
           loginProviders: [
             LoginProvider(
                 icon: Icons.ac_unit,
@@ -996,6 +1014,7 @@ void main() {
           onLogin: (data) => null,
           onRecoverPassword: (data) => null,
           passwordValidator: (value) => null,
+      backButton: const SizedBox.shrink(),
         ));
     await tester.pumpWidget(loginBuilder());
     await tester.pumpAndSettle(loadingAnimationDuration);
@@ -1030,6 +1049,7 @@ void main() {
           onLogin: (data) => null,
           onRecoverPassword: (data) => null,
           passwordValidator: (value) => null,
+      backButton: const SizedBox.shrink(),
           additionalSignupFields: const [
             UserFormField(keyName: 'Name'),
             UserFormField(keyName: 'Surname'),
@@ -1080,9 +1100,11 @@ void main() {
           onLogin: (data) => null,
           onRecoverPassword: (data) => null,
           passwordValidator: (value) => null,
+      backButton: const SizedBox.shrink(),
           additionalSignupFields: const [
             UserFormField(keyName: 'Name'),
             UserFormField(keyName: 'Surname'),
+
           ],
         ));
 
@@ -1124,6 +1146,7 @@ void main() {
           onLogin: (data) => null,
           onRecoverPassword: (data) => null,
           passwordValidator: (value) => null,
+      backButton: const SizedBox.shrink(),
           additionalSignupFields: const [
             UserFormField(keyName: 'Name'),
             UserFormField(keyName: 'Surname'),
@@ -1168,6 +1191,7 @@ void main() {
         onLogin: (data) => null,
         onRecoverPassword: (data) => null,
         passwordValidator: (value) => null,
+        backButton: const SizedBox.shrink(),
         footer: 'Copyright flutter_login'));
     await tester.pumpWidget(loginBuilder());
     await tester.pumpAndSettle(loadingAnimationDuration);

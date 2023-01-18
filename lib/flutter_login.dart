@@ -273,6 +273,7 @@ class FlutterLogin extends StatefulWidget {
       this.onSignup,
       required this.onLogin,
       required this.onRecoverPassword,
+      required this.backButton,
       this.title,
 
       /// The [ImageProvider] or asset path [String] for the logo image to be displayed
@@ -424,6 +425,9 @@ class FlutterLogin extends StatefulWidget {
   /// of resizing the window.
   /// Default: false
   final bool scrollable;
+
+  /// backButton is a widget for a button on the top left of the screen
+  final Widget backButton;
 
   static String? defaultEmailValidator(value) {
     if (value!.isEmpty || !Regex.email.hasMatch(value)) {
@@ -826,6 +830,7 @@ class _FlutterLoginState extends State<FlutterLogin>
             ),
             if (!kReleaseMode && widget.showDebugButtons)
               _buildDebugAnimationButtons(),
+            widget.backButton,
           ],
         ),
       ),

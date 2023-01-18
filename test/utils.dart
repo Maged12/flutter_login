@@ -68,6 +68,7 @@ Widget defaultFlutterLogin() {
       onSignup: (data) => null,
       onLogin: (data) => null,
       onRecoverPassword: (data) => null,
+      backButton: const SizedBox.shrink(),
     ),
   );
 }
